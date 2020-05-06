@@ -16,6 +16,8 @@ public class OperatorServiceTest {
 	
 	private OperationService operationService;
 	private static final String NULL_ERROR = "Null value is not valid";
+	private static final String OPERATOR_ERROR = "Operation is not implemented";
+	
 	private static final String FIRST_PARAM_VALID_VALUE = "2.3";
 	private static final String SECOND_PARAM_VALID_VALUE = "3.5";
 	private static final String RESULT_ADDITION = "5.8";
@@ -69,6 +71,16 @@ public class OperatorServiceTest {
 		expected.setResult(RESULT_SUBTRACTION);
 		ResultDto result = operationService.calculate(new BigDecimal(FIRST_PARAM_VALID_VALUE),
 				new BigDecimal(SECOND_PARAM_VALID_VALUE), Operators.SUBTRACTION.getCode());
+		assertEquals(expected, result);
+	}
+	
+	@Test
+	public void operationNotImplemented() {
+		ResultDto expected = new ResultDto();
+		expected.setSuccess(false);
+		expected.setResult(OPERATOR_ERROR);
+		ResultDto result = operationService.calculate(new BigDecimal(FIRST_PARAM_VALID_VALUE),
+				new BigDecimal(SECOND_PARAM_VALID_VALUE), "CODE");
 		assertEquals(expected, result);
 	}
 }
