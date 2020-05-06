@@ -1,0 +1,132 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Calculator",
+    "version": "v1",
+    "description": "Calculadora api. Gestión de operaciones de la calculadora"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Calculadora",
+      "description": "Operaciones de calculadora"
+    }
+  ],
+  "paths": {
+    "/api/calculator/calculate/{operator}": {
+      "post": {
+        "tags": [
+          "Calculadora"
+        ],
+        "summary": "Operaciones de calculadora.",
+        "description": "Operaciones calculadora",
+        "operationId": "calculate",
+        "parameters": [
+          {
+            "name": "operator",
+            "in": "path",
+            "description": "Tipo de operación",
+            "required": true,
+            "example": "A",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "firstElement",
+            "in": "query",
+            "description": "Elemento uno a operar",
+            "required": true,
+            "example": 41,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "secondElement",
+            "in": "query",
+            "description": "Elemento 2 a operar ",
+            "required": true,
+            "example": 20.3,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseOK"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                   "$ref": "#/components/schemas/ResponseKO"
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+  },
+  "components": {
+    "schemas": {
+      "ResponseOK": {
+        "type": "object",
+        "description": "Respuesta de la operación",
+        "properties": {
+          "result": {
+            "type": "string",
+            "description": "Resultado de la operación",
+            "example": "12.3"
+          },
+          "success":{
+            "type": "boolean",
+            "description": "Estado de la operación",
+            "example": "true"
+          }
+        }
+      },
+      "ResponseKO": {
+        "type": "object",
+        "description": "Respuesta de la operación errónea",
+        "properties": {
+          "result": {
+            "type": "string",
+            "description": "Información del error",
+            "example": "Operation is not implemented"
+          },
+          "success":{
+            "type": "boolean",
+            "description": "Estado de la operación",
+            "example": "false"
+          }
+        }
+      },
+      "Operators": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Operators:\n  * `A` - Sumar(Addition)\n * `S` - Restar(Subtraction)",
+            "example": "S"
+          }
+        }
+      }
+    }
+  }
+}
