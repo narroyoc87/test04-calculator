@@ -11,7 +11,7 @@
 	<groupId>com.narroyo</groupId>
 	<artifactId>calculator-test</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>calculator-test</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -46,6 +46,24 @@
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.tracer</groupId>
+			<artifactId>tracer</artifactId>
+			<version>1.0</version>
+		</dependency>
+<!-- 		<repositories> -->
+<!-- 		  <repository> -->
+<!-- 		    <id>my-local-repo</id> -->
+<!-- 		    <url>file://${basedir}/lib</url> -->
+<!-- 		  </repository> -->
+<!-- 		</repositories> -->
+<!-- 		<dependency> -->
+<!-- 		    <groupId>io.corp.calculator</groupId> -->
+<!-- 		    <artifactId>calculator</artifactId> -->
+<!-- 		    <version>1.0</version> -->
+<!-- 		    <scope>system</scope> -->
+<!-- 		    <systemPath>/lib/tracer-1.0.0.jar</systemPath> -->
+<!-- 		</dependency> -->
 	</dependencies>
 
 	<build>

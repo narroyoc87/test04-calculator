@@ -6,15 +6,23 @@ import java.math.BigDecimal;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
+import com.narroyo.calculator.Tracer;
 import com.narroyo.calculator.dto.ResultDto;
 import com.narroyo.calculator.enumeration.Operators;
 import com.narroyo.calculator.service.OperationService;
 
 public class OperatorServiceTest {
 
+	@Mock
+	private Tracer trace;
 	
-	private OperationService operationService;
+	@InjectMocks
+	private OperationServiceImpl operationService;
+	
 	private static final String NULL_ERROR = "Null value is not valid";
 	private static final String OPERATOR_ERROR = "Operation is not implemented";
 	
@@ -24,7 +32,7 @@ public class OperatorServiceTest {
 	private static final String RESULT_SUBTRACTION = "-1.2";
 	@BeforeEach
     public void setUp() throws Exception {
-		operationService = new OperationServiceImpl();
+		MockitoAnnotations.initMocks(this);
     }
 	
 	@Test

@@ -21,7 +21,7 @@ public class OperationController {
 	OperationService operationService;
 	
 	@PostMapping("/calculate/{operator}")
-	public ResponseEntity<ResultDto> search(@PathVariable(value = "operator", required = true) String operator,
+	public ResponseEntity<ResultDto> calculate(@PathVariable(value = "operator", required = true) String operator,
 			@RequestParam(value = "firstElement", required = true) BigDecimal firstElement,
 			@RequestParam(value = "secondElement", required = true) BigDecimal secondElement) {
 		

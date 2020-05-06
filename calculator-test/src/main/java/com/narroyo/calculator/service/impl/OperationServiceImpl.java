@@ -5,11 +5,10 @@ import java.math.BigDecimal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.narroyo.calculator.Tracer;
 import com.narroyo.calculator.dto.ResultDto;
 import com.narroyo.calculator.enumeration.Operators;
 import com.narroyo.calculator.service.OperationService;
-
-import io.corp.calculator.TracerImpl;
 
 @Service
 public class OperationServiceImpl implements OperationService {
@@ -18,7 +17,7 @@ public class OperationServiceImpl implements OperationService {
 	private static final String OPERATOR_ERROR = "Operation is not implemented";
 	
 	@Autowired
-	TracerImpl trace;
+	Tracer trace;
 	
 	@Override
 	public ResultDto calculate(BigDecimal firtsElement, BigDecimal secondElement, String operatorCode) {

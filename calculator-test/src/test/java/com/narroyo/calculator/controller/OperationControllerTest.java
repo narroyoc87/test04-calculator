@@ -88,9 +88,9 @@ public class OperationControllerTest {
 		 */
 		ResultDto resultOperation = new ResultDto();
 		resultOperation.setSuccess(true);
-		resultOperation.setResult("0.8");
+		resultOperation.setResult("3.8");
 		when(operationService.calculate(new BigDecimal(FIRST_PARAM_VALID_VALUE),
-				new BigDecimal(SECOND_PARAM_VALID_VALUE), Operators.SUBTRACTION.getCode())).thenReturn(resultOperation);
+				new BigDecimal(SECOND_PARAM_VALID_VALUE), Operators.ADDITION.getCode())).thenReturn(resultOperation);
 		
 		/**
 		 * When
