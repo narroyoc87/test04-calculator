@@ -2,9 +2,12 @@ package com.narroyo.calculator.service.impl;
 
 import java.math.BigDecimal;
 
+import org.springframework.stereotype.Service;
+
 import com.narroyo.calculator.dto.ResultDto;
 import com.narroyo.calculator.service.OperationService;
 
+@Service
 public class OperatorServiceImpl implements OperationService {
 
 	

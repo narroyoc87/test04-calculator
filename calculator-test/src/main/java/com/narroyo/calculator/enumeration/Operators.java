@@ -3,7 +3,7 @@ package com.narroyo.calculator.enumeration;
 import java.util.HashMap;
 import java.util.Map;
 /***
- * Enum to indicate de type of math operations<br>
+ * Enum to indicate type of math operations<br>
  * <strong>A</strong> for addition<br>
  * <strong>B</strong> for subtraction
  */
