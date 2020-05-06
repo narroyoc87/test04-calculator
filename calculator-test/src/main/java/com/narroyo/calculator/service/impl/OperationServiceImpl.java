@@ -8,7 +8,7 @@ import com.narroyo.calculator.dto.ResultDto;
 import com.narroyo.calculator.service.OperationService;
 
 @Service
-public class OperatorServiceImpl implements OperationService {
+public class OperationServiceImpl implements OperationService {
 
 	
 	@Override
